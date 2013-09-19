@@ -9,7 +9,7 @@ $password = "";
 if(isset($_POST['username'])) $username = sanitizeString($_POST['username']);
 if(isset($_POST['password'])) $password = sanitizeString($_POST['password']);
 
-$password = md5("abuzittin$password");
+$password = md5("$key$password");
 
 $dbh = new PDO('mysql:host=localhost;dbname='.$db_database, $db_username, $db_password,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8" ));
 
